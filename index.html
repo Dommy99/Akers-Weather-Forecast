@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Wheather Dashboard</title>
+  </head>
+  <body>
+    <header class="col s12 card-panel blue darken-4 white-text center-align">
+      Wheather Dashboard
+    </header>
+
+    <div class="row">
+      <div class="col s3">
+        <h5>Search For a City:</h5>
+        <nav>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field grey lighten-4">
+                <input id="search" type="search" required />
+                <label class="label-icon" for="search"
+                  ><i class="material-icons"></i
+                ></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </nav>
+        <a class="waves-effect waves-light btn blue lighten-3" id="submit"
+          >Submit</a
+        >
+      </div>
+      <div class="col s9" id="dashboard">
+        <p id="city"></p>
+        <p id="temp">Temp:</p>
+        <p id="wind">Wind:</p>
+        <p id="humidity">Humidity:</p>
+        <p id="uv">UV index:</p>
+      </div>
+      <div class="col s9" id="forecast">5-Day Forecast:</div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
