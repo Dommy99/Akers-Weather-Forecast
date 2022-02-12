@@ -21,6 +21,7 @@ var tempElday1 = document.getElementById('temp1');
 var windElday1 = document.getElementById('wind1');
 var humidityElday1 = document.getElementById('humidity1');
 var uvElday1 = document.getElementById('uv1');
+var iconElday1 = document.getElementById('icon1');
  
 submitBtn.addEventListener('click', function() {
     var city = searchBar.value;
@@ -78,20 +79,27 @@ var temp = fiveDayData[0].temp.day;
 var wind = fiveDayData[0].wind_speed;
 var humidity = fiveDayData[0].humidity;
 var uv = fiveDayData[0].uvi;
+var icon = fiveDayData[0].weather[0].icon
 tempElday1.append(temp);
 windElday1.append(wind);
 humidityElday1.append(humidity);
 uvElday1.append(uv);
+iconElday1.append(icon);
 for (var i = 0; i < 5;i++){
-    var temp = fiveDayData[i].temp.day;
+var temp = fiveDayData[i].temp.day;
 var wind = fiveDayData[i].wind_speed;
 var humidity = fiveDayData[i].humidity;
 var uv = fiveDayData[i].uvi;
+var icons = fiveDayData[i].weather[0].icon
 // document grabs the HTML element, getElementById grabs the id , (i + 1) moves it down the array "math", innertext replaces the text with whatever i give it.
 document.getElementById("temp"+(i+1)).innerText = temp;
 document.getElementById("wind"+(i+1)).innerText = wind;
 document.getElementById("humidity"+(i+1)).innerText = humidity;
 document.getElementById("uv"+(i+1)).innerText = uv;
+document.getElementById("icon"+(i+1)).src = "http://openweathermap.org/img/wn/" + icons + ".png"
+console.log(icons);
+// document.getElementById("icon"+(i+1)).innerText = icons;
+// document.querySelector("#icon"+(i+1)).src = "http://openweathermap.org/img/wn/" + icons + "@2x.png"
 [i+1]
 
 
