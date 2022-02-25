@@ -47,6 +47,7 @@ cityEl.appendChild(cityBtn);
 cityBtn.addEventListener("click", function(){
   console.log("click")
 findCity(savedCity);
+
 });
 }
 
@@ -87,7 +88,7 @@ function getForcast(currentCityLat, currentCityLon) {
       var humidity = data.current.humidity;
       var uv = data.current.uvi;
       var date = new Date(data.current.dt * 1000).toLocaleDateString("en-US");
-      var uvi = uv.value;
+      // var uvi = uv.value;
       var icons = data.current.weather[0].icon;
       tempEl.append(currentCity);
       windEl.append(wind);
@@ -98,14 +99,14 @@ function getForcast(currentCityLat, currentCityLon) {
       document.querySelector("#icon").src =
         "http://openweathermap.org/img/wn/" + icons + "@2x.png";
       fiveday(data.daily);
-
-    //   if (uvi < 3) {
-    //     $("#uv").css("background-color", "green");
-    //   } else if (uvi < 7) {
-    //     $("#uv").css("background-color", "yellow");
-    //   } else {
-    //     $("#uv").css("background-color", "red");
-    //   }
+      if (uv < 3) {
+        $("#uv").css("background-color", "green");
+      } else if (uv < 7) {
+        $("#uv").css("background-color", "yellow");
+       } else {
+        $("#uv").css("background-color", "red");
+      }
+      
     });
 }
 
