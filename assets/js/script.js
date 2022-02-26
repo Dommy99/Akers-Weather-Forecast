@@ -70,7 +70,7 @@ function findCity(city) {
       var currentCity = data[0].name;
       var currentCityLat = data[0].lat;
       var currentCityLon = data[0].lon;
-      gencity.append(currentCity);
+      gencity.textContent = currentCity;
       getForcast(currentCityLat, currentCityLon);
     });
 }
@@ -88,14 +88,13 @@ function getForcast(currentCityLat, currentCityLon) {
       var humidity = data.current.humidity;
       var uv = data.current.uvi;
       var date = new Date(data.current.dt * 1000).toLocaleDateString("en-US");
-      // var uvi = uv.value;
       var icons = data.current.weather[0].icon;
-      tempEl.append(currentCity);
-      windEl.append(wind);
-      humidityEl.append(humidity);
-      uvEl.append(uv);
-      dateEl.append(date);
-      iconEl.append(icons);
+      tempEl.textContent = currentCity;
+      windEl.textContent = wind;
+      humidityEl.textContent =humidity;
+      uvEl.textContent =uv;
+      dateEl.textContent =date;
+      iconEl.textContent =icons;
       document.querySelector("#icon").src =
         "http://openweathermap.org/img/wn/" + icons + "@2x.png";
       fiveday(data.daily);
