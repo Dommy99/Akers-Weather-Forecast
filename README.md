@@ -18,7 +18,7 @@ This app was a requirment during the bootcamp it shows my understanding of local
 
 - https://dommy99.github.io/Akers-Weather-Forecast/
 
-![](assets\images\weather-api.JPG)
+![](assets/images/weather-api.JPG)
 
 ## Contact Me
 
