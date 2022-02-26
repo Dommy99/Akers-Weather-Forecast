@@ -41,6 +41,7 @@ function loadCity (){
 console.log(savedCity);
 
 var cityBtn = document.createElement("button");
+cityBtn.classList.add('waves-effect', 'waves-light', 'btn', 'blue', 'lighten-3')
 cityBtn.textContent = savedCity;
 cityEl.appendChild(cityBtn);
 
@@ -60,7 +61,7 @@ findCity(savedCity);
 //`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 function findCity(city) {
   limit = 5;
-  let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${key}`;
+  let url = `//api.openweathermap.org/geo/1.0/direct?q=${city}&limit=${limit}&appid=${key}`;
 
   fetch(url)
     .then((response) => {
@@ -76,7 +77,7 @@ function findCity(city) {
 }
 
 function getForcast(currentCityLat, currentCityLon) {
-  let cityForcast = `https://api.openweathermap.org/data/2.5/onecall?&units=imperial&lat=${currentCityLat}&lon=${currentCityLon}&appid=${key}`;
+  let cityForcast = `//api.openweathermap.org/data/2.5/onecall?&units=imperial&lat=${currentCityLat}&lon=${currentCityLon}&appid=${key}`;
   fetch(cityForcast)
     .then((response) => {
       return response.json();
@@ -96,7 +97,7 @@ function getForcast(currentCityLat, currentCityLon) {
       dateEl.textContent =date;
       iconEl.textContent =icons;
       document.querySelector("#icon").src =
-        "http://openweathermap.org/img/wn/" + icons + "@2x.png";
+        "//openweathermap.org/img/wn/" + icons + "@2x.png";
       fiveday(data.daily);
       if (uv < 3) {
         $("#uv").css("background-color", "green");
@@ -133,7 +134,7 @@ function fiveday(fiveDayData) {
     document.getElementById("humidity" + (i + 1)).innerText = humidity;
     document.getElementById("uv" + (i + 1)).innerText = uv;
     document.getElementById("icon" + (i + 1)).src =
-      "http://openweathermap.org/img/wn/" + icons + ".png";
+      "//openweathermap.org/img/wn/" + icons + ".png";
     // console.log(icons);
     // document.getElementById("icon"+(i+1)).innerText = icons;
     // document.querySelector("#icon"+(i+1)).src = "http://openweathermap.org/img/wn/" + icons + "@2x.png"
