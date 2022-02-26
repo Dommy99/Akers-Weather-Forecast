@@ -12,7 +12,7 @@
 
 ## Description
 
-This app was requirment during the bootcamp it show my understanding of local storage, DOM manipulation, and API usage. It's also a cool funtional weather application
+This app was a requirment during the bootcamp it shows my understanding of local storage, DOM manipulation, and API usage. It's also a cool funtional weather application
 
 ## Deployment
 
